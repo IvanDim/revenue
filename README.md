@@ -69,3 +69,16 @@ To run all the tests of the project:
 * PostgreSQL
 * Hibernate implementation of JPA
 * Springfox (implementation of Swagger)
+
+
+## Architecture
+* I structured the code following the hexagonal architecture. This allows decoupled adapters from business logic. We can easily exchange the direction the data goes as long as it follows the provided ports.
+The dependencies go from adapter layer (outside world) to domain (business logic), so the core application doesn't know what's happening with outgoing data and where data comes from.
+
+![img_1.png](img_1.png)
+  
+
+
+* There is an CQS pattern hidden in the code as well. This gives us separation between getting data and pushing data. The benefit comes when the service grow and need to scale up. Usually GET requests are much more popular than posting/updating data, so if we follow a pattern like this during development, we can easily split the service in multiple microservices (Queries and Commands) and scale them up individually.
+
+![img.png](img.png)
