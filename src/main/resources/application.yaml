@@ -1,0 +1,16 @@
+spring:
+  datasource:
+    url: ${POSTGRESQL_URL:jdbc:postgresql://localhost:5432/testdb}
+    username: ${POSTGRESQL_USERNAME:postgres}
+    password: ${POSTGRESQL_PASSWORD:mysecretpassword}
+  jpa:
+    properties:
+      hibernate:
+#        jdbc:
+#          lob:
+#            non_contectual_creation: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        ddl-auto: create-drop
+        temp:
+          use_jdbc_metadata_defaults: false
+
