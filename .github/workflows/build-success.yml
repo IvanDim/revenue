@@ -5,7 +5,7 @@ name: Build-Success
 
 on:
   workflow_run:
-    workflows: [ Test-Success ]
+    workflows: [ Test-Success, Test-Fail ]
     types: [ completed ]
     branches: [ main ]
 
