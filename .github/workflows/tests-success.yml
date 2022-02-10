@@ -1,7 +1,7 @@
 # This workflow will build a Java project with Maven, and cache/restore any dependencies to improve the workflow execution time
 # For more information see: https://help.github.com/actions/language-and-framework-guides/building-and-testing-java-with-maven
 
-name: Test-Fail
+name: Test-Success
 
 on:
   push:
@@ -10,11 +10,11 @@ on:
     branches: [ main ]
 
 jobs:
-  test-fail:
+  test-success:
 
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v2
       - name: Tests
-        run: sleep 10 && exit 1
+        run: sleep 10 && exit 0
