@@ -50,7 +50,6 @@ public class CompanyResourceTest {
                 "\"name\":\"save_test\"," +
                 "\"value\":100" +
                 "}";
-
         this.mockMvc.perform(post("/api/companies")
                 .contentType(MediaType.APPLICATION_JSON_UTF8_VALUE)
                 .content(companyRequest))
