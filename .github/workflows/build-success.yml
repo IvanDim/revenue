@@ -7,10 +7,11 @@ on:
   workflow_run:
     workflows: [ Test-Success ]
     types: [ completed ]
-    branches: [ dev ]
 
 jobs:
   build-success:
+    if: ${{ github.event.workflow_run.conclusion == 'success' && github.ref == 'refs/heads/dev' }}
+
     runs-on: ubuntu-latest
 
     steps:
