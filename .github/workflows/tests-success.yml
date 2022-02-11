@@ -5,7 +5,6 @@ name: Test-Success
 
 on:
   push:
-  pull_request:
 
 jobs:
   test-success:
