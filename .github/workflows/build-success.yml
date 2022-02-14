@@ -25,6 +25,9 @@ jobs:
           distribution: 'temurin'
           cache: maven
 
+      - name: Event name
+        run: echo running on branch ${GITHUB_EVENT_NAME}
+
       - name: Branch name
         run: echo running on branch ${GITHUB_REF}
 
