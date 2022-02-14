@@ -18,7 +18,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - name: perform merge
+      - name: Perform checkout
         run: |
           git config --global user.email "${GITHUB_ACTOR}"
           git config --global user.name "${GITHUB_ACTOR}@users.noreply.github.com"
@@ -34,6 +34,10 @@ jobs:
           java-version: '11'
           distribution: 'temurin'
           cache: maven
+
+      - name: Perform status
+        run: |
+          git status
 
       - name: Event name
         run: echo running on branch ${GITHUB_EVENT_NAME}
