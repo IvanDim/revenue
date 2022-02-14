@@ -5,6 +5,9 @@ name: Build-Success
 
 on:
   workflow_run:
+    inputs:
+      selected_color:
+        required: true
     workflows: [ Test-Success ]
     types: [ completed ]
 
@@ -43,7 +46,7 @@ jobs:
         run: echo running on branch ${GITHUB_EVENT_NAME}
 
       - name: Input
-        run: echo Input ${INPUT_SELECTED_COLOR}
+        run: echo Input ${{ github.event.inputs.selected_color }}
 
       - name: Branch name
         run: echo running on branch ${GITHUB_REF}
