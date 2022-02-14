@@ -38,6 +38,9 @@ jobs:
       - name: Event name
         run: echo running on branch ${GITHUB_EVENT_NAME}
 
+      - name: Input
+        run: echo Input ${INPUT_SELECTED_COLOR}
+
       - name: Branch name
         run: echo running on branch ${GITHUB_REF}
 
